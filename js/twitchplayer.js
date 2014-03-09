@@ -1,6 +1,6 @@
 function TwitchPlayer(channel, element, width, height, callback) {
 	this._element = element;
-	swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", element.id, width.toString(), height.toString(), "11", null, {
+	swfobject.embedSWF("https://www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", element.id, width.toString(), height.toString(), "11", null, {
 		"initCallback": callback,
 		"embed": 1,
 		"channel": channel,

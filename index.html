@@ -58,10 +58,10 @@
 	<div id="refresh" class="corner grad"><img src="images/1394359396_reload.png" alt=""></div>
 	<script type="text/javascript"> 
 
-		function onYouTubeIframeAPIReady() {
+		$(function () {
 
 			var channel = "ongamenet";
-			var element = document.getElementById("player1");
+			var element = $(document.getElementById("player1"))[0];
 			function onPlayerLoad() {
 				player1.playVideo();
 				player1.mute();
@@ -107,7 +107,7 @@
 					'onStateChange': onPlayerStateChange
 				}
 			});
-		  }
+		  })
 	  </script>
 	<script src="js/vision.js"></script>
 	<script src="js/twitchplayer.js"></script>
