@@ -58,10 +58,10 @@
 	
 		$(function () {
 
-			var channel = "dotastarladder_en";
+			var channel = "twitchplayspokemon";
 			var element = $(document.getElementById("player1"))[0];
 			function onPlayerLoad() {
-				player1.playVideo();
+				var player1
 				//mute function appears to be broken
 				//player1.mute();
 			}
@@ -69,14 +69,36 @@
 		})
 		$(function () {
 
-			var channel = "tsm_bjergsen";
+			var channel = "grossie_gore";
 			var element = $(document.getElementById("player2"))[0];
 			function onPlayerLoad() {
 				player2.playVideo();
 				//mute function appears to be broken
 				//player1.mute();
 			}
-			player2 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");}
+			player2 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");})
+
+		$(function () {
+
+			var channel = "vgbootcamp";
+			var element = $(document.getElementById("player3"))[0];
+			function onPlayerLoad() {
+				player3.playVideo();
+				//mute function appears to be broken
+				//player1.mute();
+			}
+			player3 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");})
+
+			$(function () {
+
+			var channel = "taketv";
+			var element = $(document.getElementById("player4"))[0];
+			function onPlayerLoad() {
+				player4.playVideo();
+				//mute function appears to be broken
+				//player1.mute();
+			}
+			player4 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");})
 			/*player1 = new YT.Player('player1', {
 				height: '320',
 				width: '480',
@@ -117,7 +139,7 @@
 			// 		'onStateChange': onPlayerStateChange
 			// 	}
 			// });
-		  )
+		  
 	  </script>
 	<script src="js/vision.js"></script>
 	<script src="js/twitchplayer.js"></script>
