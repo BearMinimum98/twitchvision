@@ -3,6 +3,7 @@
 <head>
 	<link rel=stylesheet href="css/screen.css">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
@@ -56,6 +57,9 @@
 	<div id="refresh" class="corner grad"><img src="images/1394359396_reload.png" alt=""></div>
 	<script type="text/javascript"> 
 		function onYouTubeIframeAPIReady() {
+			var channel = null;
+			var element = null;
+			player1 = new TwitchPlayer(channel, element, '100%', '100%', "TODO")
 			/*player1 = new YT.Player('player1', {
 				height: '320',
 				width: '480',
@@ -99,6 +103,7 @@
 		  }
 	  </script>
 	<script src="js/vision.js"></script>
+	<script src="js/twitchplayer.js"></script>
 		<script>
 		setTimeout(function() {
 		  $("#loader").delay(3500).fadeOut(500);
