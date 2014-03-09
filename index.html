@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<link rel=stylesheet href="css/screen.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-	<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 </head>
 <body>
@@ -57,10 +57,16 @@
 	</div>
 	<div id="refresh" class="corner grad"><img src="images/1394359396_reload.png" alt=""></div>
 	<script type="text/javascript"> 
+
 		function onYouTubeIframeAPIReady() {
-			var channel = null;
-			var element = get_element_by_id(player1);
-			player1 = new TwitchPlayer(channel, element, '100%', '100%', "TODO");
+
+			var channel = "ongamenet";
+			var element = document.getElementById("player1");
+			function onPlayerLoad() {
+				player1.playVideo();
+				player1.mute();
+			}
+			player1 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");
 			/*player1 = new YT.Player('player1', {
 				height: '320',
 				width: '480',

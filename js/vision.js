@@ -80,14 +80,11 @@ $(window).ready(function() {
       $("#menu").removeClass("hidden");
       $("#bot-menu").addClass("hidden");
       $(this).one("click", first);
-    }
     $(".full1").one("click", first);
     $(".full2").one("click", first);
     $(".full3").one("click", first);
-
-
     $(".full4").one("click", first);
-    });
+  }
 
 
 
