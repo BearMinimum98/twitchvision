@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel=stylesheet href="css/screen.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+	<div class="vidwrapper">
+		<a class="full1"></a>
+		<div id="player1"></div>	
+	</div>
+
+	<div class="vidwrapper">
+		<a class="full2"></a>
+		<div id="player2"></div>
+	</div>
+
+	<div class="vidwrapper">
+		<a class="full3"></a>
+		<div id="player3"></div>
+	</div>  
+
+		<div class="vidwrapper">
+		<a class="full4"></a>
+		<div id="player4"></div>
+	</div>
+
+	<div id="menu" class="side-menu">
+		<ul>
+			<li><a class="stumble" style="height: 50px; overflow: hidden;"><img src="img/logo.gif" style="height: 100px; width; 100px; margin-top: -20px;"></a></li>
+			<li><a class="remote">Remote</a></li>
+			<li><a class="norm">Normal</a></li>
+			<li><a class="sepia">Sepia</a></li>
+			<li><a class="grayscale">Grayscale</a></li>
+			<li><a class="logout" href="/logout/">Logout <i class="icon-signout"></i></a></li>
+			<li id="qr" class="hidden"><img id="qrcode" src="" style="width: 10%"/></li>
+		</ul>
+	</div>
+
+	<div id="bot-menu" class="bot-menu hidden">
+		<ul>
+			<li><a class="like unactive"><i class="icon-thumbs-up-alt"> Like</i></a></li>
+			<li><a class="dislike unactive"><i class="icon-thumbs-down-alt"> Dislike</i></a></li>
+			<li><a class="norm">Normal</a></li>
+			<li><a class="sepia">Sepia</a></li>
+			<li><a class="grayscale">Grayscale</a></li>
+			<li><a class="logout" href="/logout/">Logout <i class="icon-signout"></i></a></li>
+		</ul>
+	</div>
+	<div id="refresh" class="corner grad"><img src="https://cdn1.iconfinder.com/data/icons/juicyfruit_by_salleedesign/256x256/refresh.png" alt=""></div>
+	<script type="text/javascript"> 
+		function onYouTubeIframeAPIReady() {
+			player1 = new YT.Player('player1', {
+				height: '320',
+				width: '480',
+				videoId: 'F8sS6GIAwzg',
+				playerVars: { 'autoplay': 1, 'controls': 0 },
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+			player2 = new YT.Player('player2', {
+				height: '320',
+				width: '480',
+				videoId: 'AOi5OF7gAiM',
+				playerVars: { 'autoplay': 1, 'controls': 0 },
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+			player3 = new YT.Player('player3', {
+				height: '320',
+				width: '480',
+				videoId: 'CD7Afs6OxnY',
+				playerVars: { 'autoplay': 1, 'controls': 0 },
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+			player4 = new YT.Player('player4', {
+				height: '320',
+				width: '480',
+				videoId: 'MiAdATuBEJM',
+				playerVars: { 'autoplay': 1, 'controls': 0 },
+				events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				}
+			});
+		  }
+	  </script>
+	<script src="js/vision.js"></script>
+		<script>
+		setTimeout(function() {
+		  $("#loader").delay(3500).fadeOut(500);
+		}, 3500);
+	
+	</script>
+  </body>
+</html>
