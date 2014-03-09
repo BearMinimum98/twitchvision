@@ -9,7 +9,8 @@
 <body>
 	<div class="vidwrapper">
 		<a class="full1"></a>
-		<div id="player1" style="width:100%;height:100%"><object type="application/x-shockwave-flash" 
+		<div id="player1"></div>
+<!-- 		<div id="player1" style="width:100%;height:100%"><object type="application/x-shockwave-flash" 
         height=100% 
         width=100% 
         id="live_embed_player_flash" 
@@ -25,7 +26,7 @@
           value="http://www.twitch.tv/widgets/live_embed_player.swf" />
   		<param  name="flashvars" 
           value="hostname=www.twitch.tv&channel=avaail&auto_play=true&start_volume=0" />
-</object></div>
+</object></div> -->
 	</div>
 
 	<div class="vidwrapper">
@@ -58,8 +59,8 @@
 	<script type="text/javascript"> 
 		function onYouTubeIframeAPIReady() {
 			var channel = null;
-			var element = null;
-			player1 = new TwitchPlayer(channel, element, '100%', '100%', "TODO")
+			var element = get_element_by_id(player1);
+			player1 = new TwitchPlayer(channel, element, '100%', '100%', "TODO");
 			/*player1 = new YT.Player('player1', {
 				height: '320',
 				width: '480',

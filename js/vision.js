@@ -3,42 +3,34 @@ $(window).ready(function() {
 
     $(".full1").hover(
     function() {
-      player1.setVolume(100);
+      player1.unmute();
     }, function() {
-      player1.setVolume(0);
+      player1.mute();
     });
   $(".full2").hover(
     function() {
-      player2.setVolume(100);
+      player2.unmute();
     }, function() {
-      player2.setVolume(0);
+      player2.mute();
     });
     $(".full3").hover(
     function() {
-      player3.setVolume(100);
+      player3.unmute();
     }, function() {
-      player3.setVolume(0);
+      player3.mute();
     });
       $(".full4").hover(
     function() {
-      player4.setVolume(100);
+      player4.unmute();
     }, function() {
-      player4.setVolume(0);
+      player4.mute();
     });
 
 	$("#refresh").click(function() {
 		//socket.emit("getvideos", {});
 	});
 
-  function qrshow() {
-    $("#qr").removeClass("hidden");
-    $(this).one("click", qrhide);
-  };
 
-  function qrhide() {
-    $("#qr").addClass("hidden");
-    $(this).one("click", qrshow);
-  }
     $(".remote").one("click", qrshow);
 	
       $(".norm").click(function() {
@@ -55,10 +47,6 @@ $(window).ready(function() {
     var vidId;
     var vidCode;
     function first() {
-      $(".like").removeClass("activated");
-      $(".like").addClass("unactive");
-      $(".dislike").removeClass("activated");
-      $(".dislike").addClass("unactive");
       $(".vidwrapper").addClass("unfeatured");
       $(this).parent().removeClass("unfeatured");
       $("#refresh").addClass("refresh-full"); 
@@ -68,23 +56,18 @@ $(window).ready(function() {
       $(this).parent().addClass("featured"); 
       if($(this).hasClass("full1")) {
         $(".full1").css("opacity", 0.01)
-        // vidId = player1.getVideoUrl();
-        // vidCode = vidId.replace("https://www.youtube.com/watch?feature=player_embedded&v=", "");
+
       };
       if($(this).hasClass("full2")) {
         $(".full2").css("opacity", 0.01)
-        vidId = player2.getVideoUrl();
-        vidCode = vidId.replace("https://www.youtube.com/watch?feature=player_embedded&v=", "");
+
       };
       if($(this).hasClass("full3")) {
         $(".full3").css("opacity", 0.01)
-        vidId = player3.getVideoUrl();
-        vidCode = vidId.replace("https://www.youtube.com/watch?feature=player_embedded&v=", "");
       };
       if($(this).hasClass("full4")) {
         $(".full4").css("opacity", 0.01)
-        vidId = player4.getVideoUrl();
-        vidCode = vidId.replace("https://www.youtube.com/watch?feature=player_embedded&v=", "");
+
       };
 
       $(this).one("click", second);
@@ -101,20 +84,9 @@ $(window).ready(function() {
     $(".full1").one("click", first);
     $(".full2").one("click", first);
     $(".full3").one("click", first);
+
+
     $(".full4").one("click", first);
-
-
-    $(".like").click(function() {
-      $(".like").addClass("activated");
-      $(".like").removeClass("unactive");
-      $(".dislike").removeClass("activated");
-      // socket.emit("likevideo", { videoid : vidCode });
-    });
-    $(".dislike").click(function() {
-      $(".dislike").addClass("activated");
-      $(".dislike").removeClass("unactive");
-      $(".like").removeClass("activated");
-      // socket.emit("dislikevideo", { videoid : vidCode });
     });
 
 
@@ -136,10 +108,10 @@ var tag = document.createElement('script');
       // 4. The API will call this function when the video player is ready.
       function onPlayerReady(event) {
         event.target.playVideo();
-        player1.setVolume(0);
-        player2.setVolume(0);
-        player3.setVolume(0);
-        player4.setVolume(0);
+        player1.mute();
+        player2.mute();
+        player3.mute();
+        player4.mute();
       }
 
       // 5. The API calls this function when the player's state changes.
