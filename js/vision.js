@@ -7,31 +7,31 @@ $(window).ready(function() {
     }, function() {
       player1.mute();
     });
-  $(".full2").hover(
-    function() {
-      player2.unmute();
-    }, function() {
-      player2.mute();
-    });
-    $(".full3").hover(
-    function() {
-      player3.unmute();
-    }, function() {
-      player3.mute();
-    });
-      $(".full4").hover(
-    function() {
-      player4.unmute();
-    }, function() {
-      player4.mute();
-    });
+  // uncomment for the rest of the players
+  // $(".full2").hover(
+  //   function() {
+  //     player2.unmute();
+  //   }, function() {
+  //     player2.mute();
+  //   });
+  //   $(".full3").hover(
+  //   function() {
+  //     player3.unmute();
+  //   }, function() {
+  //     player3.mute();
+  //   });
+  //     $(".full4").hover(
+  //   function() {
+  //     player4.unmute();
+  //   }, function() {
+  //     player4.mute();
+  //   });
 
 	$("#refresh").click(function() {
 		//socket.emit("getvideos", {});
 	});
 
 
-    $(".remote").one("click", qrshow);
 	
       $(".norm").click(function() {
         $("iframe").css("-webkit-filter", "");
@@ -44,15 +44,13 @@ $(window).ready(function() {
       });
 
 });
-    var vidId;
-    var vidCode;
+
     function first() {
       $(".vidwrapper").addClass("unfeatured");
       $(this).parent().removeClass("unfeatured");
       $("#refresh").addClass("refresh-full"); 
       $("#refresh").removeClass("grad"); 
       $("#menu").addClass("hidden");
-      $("#bot-menu").removeClass("hidden");
       $(this).parent().addClass("featured"); 
       if($(this).hasClass("full1")) {
         $(".full1").css("opacity", 0.01)
@@ -78,19 +76,19 @@ $(window).ready(function() {
       $("#refresh").addClass("grad"); 
       $("#refresh").removeClass("refresh-full"); 
       $("#menu").removeClass("hidden");
-      $("#bot-menu").addClass("hidden");
-      $(this).one("click", first);
+      $(this).one("click", first);}
+
     $(".full1").one("click", first);
     $(".full2").one("click", first);
     $(".full3").one("click", first);
     $(".full4").one("click", first);
-  }
+  
 
 
 
 var tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
+  
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

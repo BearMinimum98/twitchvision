@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="vidwrapper">
-		<a class="full1"></a>
+		<a class="full1" style="width:100%; height:89%;"></a>
 		<div id="player1"></div>
 <!-- 		<div id="player1" style="width:100%;height:100%"><object type="application/x-shockwave-flash" 
         height=100% 
@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="vidwrapper">
-		<a class="full2"></a>
+		<a class="full2" style="width:100%; height:89%;"></a>
 		<div id="player2"></div>
 	</div>
 
@@ -51,8 +51,7 @@
 			<li><a class="norm">Normal</a></li>
 			<li><a class="sepia">Sepia</a></li>
 			<li><a class="grayscale">Grayscale</a></li>
-			<li><a class="logout" href="/logout/">Logout <i class="icon-signout"></i></a></li>
-			<li id="qr" class="hidden"><img id="qrcode" src="" style="width: 10%"/></li>
+			<li><a class="logout" href="authenticate.html">Logout <i class="icon-signout"></i></a></li>
 		</ul>
 	</div>
 	<div id="refresh" class="corner grad"><img src="images/1394359396_reload.png" alt=""></div>
@@ -60,13 +59,25 @@
 
 		$(function () {
 
-			var channel = "ongamenet";
+			var channel = "dotastarladder_en";
 			var element = $(document.getElementById("player1"))[0];
 			function onPlayerLoad() {
 				player1.playVideo();
-				player1.mute();
+				//mute function appears to be broken
+				//player1.mute();
 			}
 			player1 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");
+		})
+		$(function () {
+
+			var channel = "sc2proleague";
+			var element = $(document.getElementById("player2"))[0];
+			function onPlayerLoad() {
+				player2.playVideo();
+				//mute function appears to be broken
+				//player1.mute();
+			}
+			player2 = new TwitchPlayer(channel, element, '100%', '100%', "onPlayerLoad");}
 			/*player1 = new YT.Player('player1', {
 				height: '320',
 				width: '480',
@@ -77,37 +88,37 @@
 					'onStateChange': onPlayerStateChange
 				}
 			});*/
-			player2 = new YT.Player('player2', {
-				height: '320',
-				width: '480',
-				videoId: 'AOi5OF7gAiM',
-				playerVars: { 'autoplay': 1, 'controls': 0 },
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-			});
-			player3 = new YT.Player('player3', {
-				height: '320',
-				width: '480',
-				videoId: 'CD7Afs6OxnY',
-				playerVars: { 'autoplay': 1, 'controls': 0 },
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-			});
-			player4 = new YT.Player('player4', {
-				height: '320',
-				width: '480',
-				videoId: 'MiAdATuBEJM',
-				playerVars: { 'autoplay': 1, 'controls': 0 },
-				events: {
-					'onReady': onPlayerReady,
-					'onStateChange': onPlayerStateChange
-				}
-			});
-		  })
+			// player2 = new YT.Player('player2', {
+			// 	height: '320',
+			// 	width: '480',
+			// 	videoId: 'AOi5OF7gAiM',
+			// 	playerVars: { 'autoplay': 1, 'controls': 0 },
+			// 	events: {
+			// 		'onReady': onPlayerReady,
+			// 		'onStateChange': onPlayerStateChange
+			// 	}
+			// });
+			// player3 = new YT.Player('player3', {
+			// 	height: '320',
+			// 	width: '480',
+			// 	videoId: 'CD7Afs6OxnY',
+			// 	playerVars: { 'autoplay': 1, 'controls': 0 },
+			// 	events: {
+			// 		'onReady': onPlayerReady,
+			// 		'onStateChange': onPlayerStateChange
+			// 	}
+			// });
+			// player4 = new YT.Player('player4', {
+			// 	height: '320',
+			// 	width: '480',
+			// 	videoId: 'MiAdATuBEJM',
+			// 	playerVars: { 'autoplay': 1, 'controls': 0 },
+			// 	events: {
+			// 		'onReady': onPlayerReady,
+			// 		'onStateChange': onPlayerStateChange
+			// 	}
+			// });
+		  )
 	  </script>
 	<script src="js/vision.js"></script>
 	<script src="js/twitchplayer.js"></script>

@@ -1061,11 +1061,6 @@ iframe {
   transition: all 0.3s ease;
   padding: 25px;
 }
-/* line 115, ../sass/_module.scss */
-.bot-menu a:hover {
-  background-color: #666;
-}
-
 /* line 122, ../sass/_module.scss */
 .side-menu ul li {
   list-style: none;
@@ -1115,6 +1110,3 @@ iframe {
   padding-top: 25px;
 }
 /* line 159, ../sass/_module.scss */
-#qr:hover {
-  background-color: #333;
-}

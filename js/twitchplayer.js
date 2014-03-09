@@ -4,6 +4,7 @@ function TwitchPlayer(channel, element, width, height, callback) {
 		"initCallback": callback,
 		"embed": 1,
 		"channel": channel,
+		"volume": 100,
 		"auto_play": "true"
 	},
 	{
