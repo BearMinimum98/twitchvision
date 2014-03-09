@@ -68,8 +68,8 @@ $(window).ready(function() {
       $(this).parent().addClass("featured"); 
       if($(this).hasClass("full1")) {
         $(".full1").css("opacity", 0.01)
-        vidId = player1.getVideoUrl();
-        vidCode = vidId.replace("https://www.youtube.com/watch?feature=player_embedded&v=", "");
+        // vidId = player1.getVideoUrl();
+        // vidCode = vidId.replace("https://www.youtube.com/watch?feature=player_embedded&v=", "");
       };
       if($(this).hasClass("full2")) {
         $(".full2").css("opacity", 0.01)
